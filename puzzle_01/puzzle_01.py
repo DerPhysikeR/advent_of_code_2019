@@ -11,8 +11,7 @@ def calculate_recursive_fuel_requirement(mass):
 
 def read_module_masses(file_):
     with open(file_, "r") as stream:
-        module_masses = [int(mass) for mass in stream]
-    return module_masses
+        return [int(mass) for mass in stream]
 
 
 def solve_part_1(module_masses):
