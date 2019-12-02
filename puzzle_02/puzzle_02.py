@@ -1,3 +1,6 @@
+from itertools import product
+
+
 def add(a, b):
     return a + b
 
@@ -33,5 +36,17 @@ def solve_part_1():
     return compute(code)[0]
 
 
+def solve_part_2():
+    initial_code = tuple(read_input())
+    for noun, verb in product(range(100), range(100)):
+        code = list(initial_code)
+        code[1], code[2] = noun, verb
+        result = compute(code)
+        if result[0] == 19690720:
+            break
+    return 100 * noun + verb
+
+
 if __name__ == "__main__":
     print(f"Part 1: {solve_part_1()}")
+    print(f"Part 2: {solve_part_2()}")
