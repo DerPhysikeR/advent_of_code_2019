@@ -19,18 +19,18 @@ DIRECTION_DICT = {
 
 
 def points_from_path(path):
-    path_points = set()
+    path_points = []
     position = Point(0, 0)
     for move in path:
         direction, distance = DIRECTION_DICT[move[0]], int(move[1:])
         for _ in range(distance):
             position = position + direction
-            path_points.add(position)
+            path_points.append(position)
     return path_points
 
 
 def min_crossing_distance_from_points(path_points1, path_points2):
-    crossing_points = path_points1.intersection(path_points2)
+    crossing_points = set(path_points1).intersection(set(path_points2))
     manhatten_distances = set(abs(point.x) + abs(point.y) for point in crossing_points)
     return min(manhatten_distances)
 

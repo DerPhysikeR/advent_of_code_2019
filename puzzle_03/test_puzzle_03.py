@@ -3,8 +3,11 @@ from puzzle_03 import Point, points_from_path, min_crossing_point_distance
 
 
 def test_points_from_path():
-    assert points_from_path(["U2", "R1", "D1"]) == set(
-        (Point(0, 1), Point(0, 2), Point(1, 2), Point(1, 1))
+    assert tuple(points_from_path(["U2", "R1", "D1"])) == (
+        Point(0, 1),
+        Point(0, 2),
+        Point(1, 2),
+        Point(1, 1),
     )
 
 
