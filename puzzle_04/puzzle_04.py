@@ -12,9 +12,7 @@ def monotonic_increasing(digits):
 
 def is_password_valid(password):
     digits = to_digits(password)
-    # if len(digits) != 6:
-    #     return False
-    if not (138241 <= password <= 674034):
+    if len(digits) != 6:
         return False
     if not has_equal_neighboring_digits(digits):
         return False

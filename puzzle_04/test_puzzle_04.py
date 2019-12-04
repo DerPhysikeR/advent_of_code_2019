@@ -11,7 +11,7 @@ def test_int_to_digits():
     [
         (222222, True),
         (2222222, False),
-        (111111, False),
+        (111111, True),
         (223450, False),
         (123789, False),
         (145678, False),
